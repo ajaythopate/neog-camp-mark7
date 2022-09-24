@@ -1,0 +1,53 @@
+/** @format */
+
+* {
+  box-sizing: border-box;
+}
+:root {
+  --primary-color: rgb(205, 203, 74);
+}
+body {
+  margin: 0px;
+}
+textarea {
+  width: 100%;
+  display: block;
+  height: 10vh;
+  margin-top: 10vh;
+}
+.output {
+  width: 100%;
+  height: 10vh;
+  display: block;
+  padding: 1rem;
+  border: 1px solid black;
+}
+.navigation {
+  margin-top: 0px;
+  background-color: var(--primary-color);
+  padding: 15px;
+  text-align: center;
+  border-bottom-right-radius: 2rem;
+  border-bottom-left-radius: 2rem;
+}
+main {
+  margin-right: 5vh;
+  margin-left: 5vh;
+}
+footer {
+  text-align: center;
+  margin-top: 15vh;
+  background-color: var(--primary-color);
+  padding: 15px;
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+}
+button {
+  background-color: var(--primary-color);
+  padding: 15px;
+  border-radius: 10px;
+}
+button:hover {
+  background-color: rgb(170, 189, 87);
+  padding: 18px;
+}
