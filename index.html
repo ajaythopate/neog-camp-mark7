@@ -1,21 +1,42 @@
+<!-- @format -->
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Paper Tap Translator</title>
-</head>
-<body>
-    <h1>Paper  Tap Translator</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yoda says</title>
+    <link href="/style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <nav class="navigation">
+      <h1>Yoda Translator</h1>
+    </nav>
+    <main>
+      <textarea
+        id="txt-input"
+        placeholder="Enter your text here we will translate it to emoji language"
+      ></textarea>
+      <br />
+      <br />
+      <button id="btn-translate">Translate</button>
+      <br />
+      <br />
 
-     <textarea id="user-input" placeholder="put your sentence"></textarea><br/><br/>
-     <button id="output-button"> Translate</button><br/><br/>
-     <div>
-       <textarea id="transleted-output" placeholder="your trsaletion will be here"></textarea>
-     </div>
+      <br />
+      <div class="output"></div>
+    </main>
 
+    <footer class="foot">
+      <h1>ABOUT</h1>
 
-
-</body>
+      <p>
+        Most of you heard about Star Trek.
+        <br />
+        here is a fun translation web aap which convert English into Yoda
+      </p>
+    </footer>
+    <script src="/app.js"></script>
+  </body>
 </html>
