@@ -1,27 +1,26 @@
-var userinput = document.querySelector("#user-inpute");
-var outputbutton = document.querySelector("#output-button");
-var transletedoutput = document.querySelector("#transleted-output");
+var inputxt = document.querySelector("#txt-input");
+var translatebtn = document.querySelector("#btn-translate");
+var outputxt = document.querySelector(".output");
 
-var serverURL = 'https://api.funtranslations.com/translate/pirate.json';
+var url = "https://api.funtranslations.com/translate/yoda.json"
 
-function getTranslationURL(userinput) {
-    return serverURL + "?" + "text=" + userinput
-}
-
-
-function insertTransletedoutput(transletedText) {
-    return transletedoutput.innerHTML = transletedText;
-}
-function clickHandler() {
-    var userinput = userinput.value;
-    fetch(getTranslationURL(userinput)).then(responce => responce.json()).then(data => {
-        var transletedText = data.contents.transleted;
-        console.log(data)
-        insertTransletedoutput(transletedText)
-    })
-
-
+function geturl(text) {
+    return url + "?" + "text=" + text
 
 }
 
-outputbutton.addEventListener("click", clickHandler)
+function errorhandler(error) {
+    console.log("error occured " + error);
+    alert("There is some problem in server please try again");
+}
+function clickresponse() {
+    var answer = inputxt.value;
+    fetch(geturl(answer))
+        .then(response => response.json())
+        .then(json => {
+            outputxt.innerText = json.contents.translated;
+
+        })
+        .catch(errorhandler)
+};
+translatebtn.addEventListener("click", clickresponse)
