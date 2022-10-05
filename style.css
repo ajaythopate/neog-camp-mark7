@@ -51,3 +51,7 @@ button:hover {
   background-color: rgb(170, 189, 87);
   padding: 18px;
 }
+
+#errMsg{
+  color: red;
+}

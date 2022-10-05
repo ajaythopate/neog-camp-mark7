@@ -1,6 +1,7 @@
 var inputxt = document.querySelector("#txt-input");
 var translatebtn = document.querySelector("#btn-translate");
 var outputxt = document.querySelector(".output");
+var errMsg = document.querySelector("#errMsg");
 
 var url = "https://api.funtranslations.com/translate/yoda.json"
 
@@ -15,12 +16,17 @@ function errorhandler(error) {
 }
 function clickresponse() {
     var answer = inputxt.value;
-    fetch(geturl(answer))
-        .then(response => response.json())
-        .then(json => {
-            outputxt.innerText = json.contents.translated;
-
-        })
-        .catch(errorhandler)
+    if (answer === "") {
+        errMsg.innerText = "Field can not be empty.";
+    } else {
+        fetch(geturl(answer))
+            .then(response => response.json())
+            .then(json => {
+                outputxt.innerText = json.contents.translated;
+                errMsg.innerText = "";
+            })
+            .catch(errorhandler)
+    }
+    
 };
 translatebtn.addEventListener("click", clickresponse)
